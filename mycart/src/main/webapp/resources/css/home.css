@@ -1,0 +1,24 @@
+.card {
+    margin-top: 80px;
+    height: 490px;
+    transition: 0.5s;
+}
+.card-img-top {
+    height: 200px;
+    width: 90%;
+    position: relative;
+    top: -15px;
+    left: 5%;
+}
+.card-text{
+
+    overflow:hidden;
+    line-height: 2rem;
+    max-height: 8rem;
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+}
