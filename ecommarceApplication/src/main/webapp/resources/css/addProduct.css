@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.center {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 430px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 6px;
+    background: #FFF;
+}
+input {
+    margin-top: 20px;
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid #CACACA;
+    padding: 0 15px;
+}
+
+#login {
+    margin-top: 25px;
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 17px;
+    padding-left: 7px;
+    color: white;
+    background-color: cornflowerblue;
+    font-size: 15px;
+
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #bec4ee;
+    column-gap: 30px;
+}
