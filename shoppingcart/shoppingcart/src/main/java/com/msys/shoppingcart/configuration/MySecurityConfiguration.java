@@ -47,17 +47,7 @@ public class MySecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
        auth.userDetailsService(userDetailsServiceImpl).passwordEncoder(passwordEncoder());
     }
-    @Bean
-    CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:4200"));
-        configuration.setAllowedMethods(Arrays.asList("GET","POST"));
-        configuration.setAllowCredentials(true);
-        configuration.addAllowedHeader("Authorization");
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
+  
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
         http.csrf().
@@ -68,7 +58,6 @@ public class MySecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/product/update","/product/save","/product/delete/*","/seller/findProducts").hasAuthority("SELLER")
                 .antMatchers("/product/get","/product/getAll","/cart/**","/order/buyNow","/order/save").hasAuthority("CUSTOMER")
                 .antMatchers("/generate-token","/user/save","/seller/save","/currentUser").permitAll()
-
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(unAuthorizedHandler)
