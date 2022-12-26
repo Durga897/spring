@@ -63,11 +63,6 @@ public class AuthenticateController {
     @GetMapping("/currentUser")
     public User getCurrentUser(final Principal principal){
         return userService.currentUser(principal.getName());
-//        return ((User) this.userDetailsService.loadUserByUsername(principal.getName()));
     }
 
-    @GetMapping("/getCurrentUser")
-    public UserDetails getCurrentUsers(final Principal principal){
-        return userDetailsService.loadUserByUsername(principal.getName());
-    }
 }
